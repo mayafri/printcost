@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Calcul de coûts d'une imprimante</title>
+		<link rel="stylesheet" href="style.css">
+		<script src="script.js"></script>
+	</head>
+	<body>
+
+	<header>
+		<h1>Calcul de coûts d'une imprimante</h1>
+	</header>
+
+	<section>
+		<div class="form">
+			<div class="form-line">
+				<label for="name">Nom de l'imprimante</label>
+				<input type="text" id="name" oninput="updateTotal()" maxlength=100>
+			</div>
+			<hr>
+			<div class="form-line">
+				<label for="toner-price">Prix par toner</label>
+				<input type="number" id="toner-price" oninput="updateTotal()" min=0>
+			</div>
+			<div class="form-line">
+				<label for="toner-pages">Nombre de pages estimées</label>
+				<input type="number" id="toner-pages" oninput="updateTotal()" min=0>
+			</div>
+			<hr>
+			<div class="form-line laser">
+				<label for="drum-price">Prix par tambour</label>
+				<input type="number" id="drum-price" oninput="updateTotal()" min=0>
+			</div>
+			<div class="form-line laser">
+				<label for="drum-pages">Durée de vie en pages</label>
+				<input type="number" id="drum-pages" oninput="updateTotal()" min=0>
+			</div>
+			<hr>
+			<div class="form-line">
+				<label for="taxes">Taxes sur les prix (%)</label>
+				<input type="number" id="taxes" oninput="updateTotal()" min=0>
+			</div>
+			<p class="desc">Si vous avez entré des prix hors-taxes</p>
+			<hr>
+			<div class="form-line">
+				<label for="pages-year">Pages imprimées par an</label>
+				<input type="number" id="pages-year" oninput="updateTotal()" min=0>
+			</div>
+			<hr>
+			<div class="form-line">
+				<label for="printer-price">Prix de l'imprimante</label>
+				<input type="number" id="printer-price" oninput="updateTotal()" min=0>
+			</div>
+			<div class="form-line">
+				<label for="startkit-pages">Pages du toner de démarrage</label>
+				<input type="number" id="startkit-pages" oninput="updateTotal()" min=0>
+			</div>
+			<p class="desc">En général la moitié d'un toner standard</p>
+		</div>
+
+		<div class="form results">
+			<div class="form-line">
+				<label for="total"><strong>Coût à la page</strong></label>
+				<input type="text" id="total" readonly>
+			</div>
+			<p class="desc">Incluant les toners et les tambours</p>
+			<div class="form-line">
+				<label for="total"><strong>Coût à la page annuel</strong></label>
+				<input type="text" id="total-year" readonly>
+			</div>
+			<p class="desc">Excluant le coût d'achat de l'imprimante</p>
+			<div class="form-line">
+				<label for="pages-year"><strong>Coût global la première année</strong></label>
+				<input type="text" id="total-year-first" readonly>
+			</div>
+			<div class="form-line">
+				<label for="pages-year"><strong>Coût global après 5 ans</strong></label>
+				<input type="text" id="total-year-5" readonly>
+			</div>
+			<div class="form-line">
+				<label for="pages-year"><strong>Coût moyen annuel sur 5 ans</strong></label>
+				<input type="text" id="moy-year-5" readonly>
+			</div>
+			<hr>
+			<div class="form-line share">
+				<p><strong>Partager le résultat :</strong></p>
+				<p class="url"></p>
+				<button onclick="copyLink()">Copier</button>
+			</div>
+		</div>
+	</section>
+
+	<script>
+		if(location.hash) {
+			let param_b64 = location.hash.substring(1);
+			let param = decodeURIComponent(escape(window.atob(param_b64)));
+			prefillValues(param.split(','));
+		}
+		updateTotal();
+	</script>
+
+	<footer>
+		<p>
+			Cet outil est mis à votre disposition par
+			<a href="https://hyakosm.net">hyakosm.net</a>
+		</p>
+	</footer>
+
+	</body>
+</html>

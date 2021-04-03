@@ -1,0 +1,122 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+h1, .form {
+    margin: 1.5rem;
+}
+
+h1 {
+    padding-bottom: 1rem;
+}
+
+label {
+    display: inline-block;
+    width: 100%;
+}
+
+input {
+    display: inline-block;
+    font-size: 13pt;
+    border: solid 1pt #DDD;
+    padding: 2pt 4pt;
+}
+
+input[type=text] {
+    width: calc(100% - 3em);
+}
+
+input[type=number], .results input {
+    max-width: 4.5em;
+    text-align: right;
+}
+
+input:read-only {
+    border-color: transparent;
+    color: #5252b9;
+    font-weight: bold;
+}
+
+input:focus {
+    border-color: #b0b1e4;
+    outline: solid 2pt #b0b1e4;
+}
+
+hr {
+    border: transparent;
+    margin: 1em 0;
+}
+
+section {
+    display: flex;
+}
+
+.form {
+    width: 100%;
+    max-width: 24em;
+    margin-top: 0;
+}
+
+.form-line {
+    margin-bottom: 0.5em;
+    display: flex;
+    align-items: center;
+}
+
+.desc {
+    font-size: 10pt;
+    font-style: italic;
+    margin-top: -0.5em;
+}
+
+footer {
+    color: gray;
+    position: absolute;
+    bottom: -0.5rem;
+    margin: 1.5rem;
+}
+
+a {
+    color: #5252b9;
+}
+
+.share {
+    margin-top: 2em;
+    display: none;
+}
+
+.share .url {
+    margin-top: -0.5em;
+    word-wrap: break-word;
+    word-break: break-all;
+    max-width: 21.5rem;
+    font-size: 10pt;
+    font-family: "Menlo", "Consolas", "DejaVu Sans Mono", monospace;
+}
+
+@media screen and (max-width: 40em) {
+    section, .form-line {
+        display: block;
+    }
+    label {
+        margin-bottom: 0.5em;
+    }
+    label::after {
+        content: " :";
+    }
+    .desc {
+        margin-top: 0;
+    }
+    input[type=number], .results input {
+        text-align: left;
+    }
+    .results input {
+        margin-left: -6pt;
+    }
+}
+
+@media screen and (max-height: 40em), (max-width: 40em) {
+    footer {
+        position: relative;
+    }
+}
