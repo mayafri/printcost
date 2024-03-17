@@ -1,5 +1,5 @@
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: system-ui, helvetica;
 }
 
 h1, .form {
@@ -91,7 +91,7 @@ a {
     word-break: break-all;
     max-width: 21.5rem;
     font-size: 10pt;
-    font-family: "Menlo", "Consolas", "DejaVu Sans Mono", monospace;
+    font-family: monospace;
 }
 
 @media screen and (max-width: 40em) {

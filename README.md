@@ -7,7 +7,7 @@ des taxes et de la consommation annuelle.
 Les résultats peuvent être partagés facilement en copiant-collant un lien
 personnalisé.
 
-En ligne ici : https://hyakosm.net/printcost/
+En ligne ici : https://printcost.onrender.com/
 
 # Print cost calculator
 
@@ -17,4 +17,4 @@ taxes and annual pages consumption.
 
 Results can be shared by copy-pasting a personalized link.
 
-Online here : https://hyakosm.net/printcost/ (not in english at the moment)
+Online here : https://printcost.onrender.com/ (not in english at this time)

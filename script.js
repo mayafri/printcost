@@ -30,7 +30,7 @@ function updateTotal() {
     
     if(tonerPrice && tonerPages) {
         document.querySelector(".share").style.display = "initial";
-        let url = "https://hyakosm.net/printcost/#";
+        let url = "https://printcost.onrender.com/#";
         let params = name + ',' + tonerPrice + ',' + tonerPages + ',' + drumPrice + ',';
         params += drumPages + ',' + taxes + ',' + pagesYear + ',';
         params += printerPrice + ',' + startkitPages;
