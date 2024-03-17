@@ -30,7 +30,7 @@ function updateTotal() {
     
     if(tonerPrice && tonerPages) {
         document.querySelector(".share").style.display = "initial";
-        let url = "https://printcost.onrender.com/#";
+        let url = window.location.protocol + "//" + window.location.host + "/#";
         let params = name + ',' + tonerPrice + ',' + tonerPages + ',' + drumPrice + ',';
         params += drumPages + ',' + taxes + ',' + pagesYear + ',';
         params += printerPrice + ',' + startkitPages;
